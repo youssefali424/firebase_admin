@@ -4,7 +4,7 @@ version: 0.2.0-dev.6
 homepage: https://github.com/appsup-dart/firebase_admin
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   clock: ^1.1.0
@@ -12,13 +12,12 @@ dependencies:
   jose: ^0.3.2
   dotenv: ^3.0.0
   openid_client: ^0.4.3
-  firebase_dart: ^1.0.0-dev.49
+  firebase_dart: ^1.0.4
   path: ^1.8.0
   meta: ^1.4.0
   http: ^0.13.0
-  crypto_keys: ^0.3.0
   collection: ^1.15.0
-  gcloud: ^0.8.0
+  gcloud: ^0.8.5
 
 dev_dependencies:
   test: ^1.17.8

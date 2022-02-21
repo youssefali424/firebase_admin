@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:firebase_admin/src/service.dart';
 
-import '../firebase_admin.dart';
 import 'app/app.dart';
 import 'app/app_extension.dart';
 import 'app.dart';
@@ -22,7 +21,7 @@ class _AuthTokenProvider implements AuthTokenProvider {
   }
 
   @override
-  Stream<String?> get onTokenChanged {
+  Stream<Future<String>?> get onTokenChanged {
     var controller = StreamController<String?>();
     var listener = (v) => controller.add(v);
 
@@ -31,7 +30,7 @@ class _AuthTokenProvider implements AuthTokenProvider {
     };
     controller.onCancel = () => internals.removeAuthTokenListener(listener);
 
-    return controller.stream;
+    return controller.stream.map((event) => Future.value(event));
   }
 }
 
